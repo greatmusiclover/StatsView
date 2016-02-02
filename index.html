@@ -272,7 +272,7 @@
         var datasets = []; // Data for each article timeseries.
         articles.forEach(function (article, index) {
           var uriEncodedArticle = encodeURIComponent(article);
-          uriEncodedArticle = uriEncodedArticle.replace("%20", "_");
+          uriEncodedArticle = uriEncodedArticle.replace(/%20/g, "_");
           // Url to query the API.
           var url = (
             'https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/' +
