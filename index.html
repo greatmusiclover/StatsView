@@ -116,6 +116,7 @@
 	        {
 	            var temp = decodeURI(sParameterName[1]);
 	            temp = temp.replace(/_/g, " ");
+	            temp = temp.replace(/%2C/g, ",");
 	            return temp;
 	        }
 	    }
@@ -276,7 +277,7 @@
         articles.forEach(function (article, index) {
           var uriEncodedArticle = encodeURIComponent(article);
           uriEncodedArticle = uriEncodedArticle.replace(/%20/g, "_");
-          uriEncodedArticle = uriEncodedArticle.replace(/%2C/g, ",");
+          //uriEncodedArticle = uriEncodedArticle.replace(/%2C/g, ",");
           uriEncodedArticle = uriEncodedArticle.replace(/ /g, "_");
           // Url to query the API.
           var url = (
