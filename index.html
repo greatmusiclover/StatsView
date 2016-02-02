@@ -121,6 +121,20 @@
 	        }
 	    }
 	};
+	
+	function CheckIfURLParameterExists(sParam)
+	{
+	    var sPageURL = window.location.search.substring(1);
+	    var sURLVariables = sPageURL.split('&');
+	    for (var i = 0; i < sURLVariables.length; i++) 
+	    {
+	        var sParameterName = sURLVariables[i].split('=');
+	        if (sParameterName[0] == sParam) 
+	        {
+	            return true;
+	        }
+	    }
+	};
     
       var config = {
         // For more information on the list of all Wikimedia languages and projects, see:
@@ -139,6 +153,26 @@
         project: 'ruwiki',
         daysAgo: 20
       };
+      
+      if(CheckIfURLParameterExists('pagename2'))
+      {
+        config[articles].push(GetURLParameter('pagename2'));
+      }
+      
+      if(CheckIfURLParameterExists('pagename3'))
+      {
+        config[articles].push(GetURLParameter('pagename3'));
+      }
+      
+      if(CheckIfURLParameterExists('pagename4'))
+      {
+        config[articles].push(GetURLParameter('pagename4'));
+      }
+      
+      if(CheckIfURLParameterExists('pagename5'))
+      {
+        config[articles].push(GetURLParameter('pagename5'));
+      }
 
       function getLanguageCode () {
         var project = $(config.projectSelector).val();
