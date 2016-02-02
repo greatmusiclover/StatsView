@@ -149,12 +149,17 @@
         minDate: moment('2015-10-01'),
         maxDate: moment().subtract(1, 'days'),
         timestampFormat: 'YYYYMMDD00',
-        articles: [GetURLParameter('pagename'), GetURLParameter('pagename2'), GetURLParameter('pagename3'), GetURLParameter('pagename4'), GetURLParameter('pagename5')],
+        articles: [],
         project: 'ruwiki',
         daysAgo: 20
       };
       
-      /*if(CheckIfURLParameterExists('pagename2'))
+      if(CheckIfURLParameterExists('pagename'))
+      {
+        config[articles].push(GetURLParameter('pagename'));
+      }
+      
+      if(CheckIfURLParameterExists('pagename2'))
       {
         config[articles].push(GetURLParameter('pagename2'));
       }
@@ -172,7 +177,7 @@
       if(CheckIfURLParameterExists('pagename5'))
       {
         config[articles].push(GetURLParameter('pagename5'));
-      }*/
+      }
 
       function getLanguageCode () {
         var project = $(config.projectSelector).val();
