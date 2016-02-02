@@ -277,7 +277,6 @@
         articles.forEach(function (article, index) {
           var uriEncodedArticle = encodeURIComponent(article);
           uriEncodedArticle = uriEncodedArticle.replace(/%20/g, "_");
-          //uriEncodedArticle = uriEncodedArticle.replace(/%2C/g, ",");
           uriEncodedArticle = uriEncodedArticle.replace(/ /g, "_");
           // Url to query the API.
           var url = (
