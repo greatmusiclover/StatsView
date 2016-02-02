@@ -115,7 +115,7 @@
 	        if (sParameterName[0] == sParam) 
 	        {
 	            var temp = decodeURI(sParameterName[1]);
-	            temp = temp.replace("_", " ");
+	            temp = temp.replace(/_/g, " ");
 	            return temp;
 	        }
 	    }
@@ -276,7 +276,7 @@
         articles.forEach(function (article, index) {
           var uriEncodedArticle = encodeURIComponent(article);
           uriEncodedArticle = uriEncodedArticle.replace(/%20/g, "_");
-          uriEncodedArticle = uriEncodedArticle.replace(" ", "_");
+          uriEncodedArticle = uriEncodedArticle.replace(/ /g, "_");
           // Url to query the API.
           var url = (
             'https://wikimedia.org/api/rest_v1/metrics/pageviews/per-article/' +
