@@ -178,6 +178,11 @@
       {
         config['articles'].push(GetURLParameter('pagename5'));
       }
+      
+      if(CheckIfURLParameterExists('daysago'))
+      {
+        config['daysAgo'] = GetURLParameter('daysago');
+      }
 
       function getLanguageCode () {
         var project = $(config.projectSelector).val();
