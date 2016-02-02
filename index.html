@@ -104,6 +104,20 @@
     </div>
 
     <script>
+    function GetURLParameter(sParam)
+	{
+	    var sPageURL = window.location.search.substring(1);
+	    var sURLVariables = sPageURL.split('&');
+	    for (var i = 0; i < sURLVariables.length; i++) 
+	    {
+	        var sParameterName = sURLVariables[i].split('=');
+	        if (sParameterName[0] == sParam) 
+	        {
+	            return sParameterName[1];
+	        }
+	    }
+	}
+    
       var config = {
         // For more information on the list of all Wikimedia languages and projects, see:
         // https://www.mediawiki.org/wiki/Extension:SiteMatrix
@@ -117,8 +131,8 @@
         minDate: moment('2015-10-01'),
         maxDate: moment().subtract(1, 'days'),
         timestampFormat: 'YYYYMMDD00',
-        articles: ['Cat', 'Dog'],
-        project: 'enwiki',
+        articles: [GetURLParameter(pagename)],
+        project: 'ruwiki',
         daysAgo: 20
       };
 
