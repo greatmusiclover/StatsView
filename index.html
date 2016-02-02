@@ -116,6 +116,7 @@
 	        {
 	            var temp = decodeURI(sParameterName[1]);
 	            temp = temp.replace(/_/g, " ");
+	            temp = temp.replace(/%2C/g, ",");
 	            return temp;
 	        }
 	    }
