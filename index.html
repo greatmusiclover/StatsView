@@ -131,12 +131,10 @@
         minDate: moment('2015-10-01'),
         maxDate: moment().subtract(1, 'days'),
         timestampFormat: 'YYYYMMDD00',
-        articles: null,
+        articles: [GetURLParameter('pagename')]],
         project: 'ruwiki',
         daysAgo: 20
       };
-      
-      config['articles'] = GetURLParameter('pagename');
 
       function getLanguageCode () {
         var project = $(config.projectSelector).val();
