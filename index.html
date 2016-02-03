@@ -70,6 +70,8 @@
         <canvas class="aqs-chart"></canvas>
       </div>
       
+      <div id="totalviews"></div>
+      
       <div class="col-lg-8 col-lg-offset-2" style="padding-right: 0px">
       	<h2>Параметры</h2>
       	<pre>
@@ -407,6 +409,14 @@ daysago — количество дней, за которое нужно пок
               // When all article datasets have been collected,
               // initialize the chart.
               if (datasets.length == articles.length) {
+              	for (i = 0; i < datasets.length; i++) {
+		 var total = 0;
+		 $.each(datasets[i]['data'],function() {
+    		   total += this;
+		 });
+		 $("#totalviews").text($("#totalviews").text() + total + " просмотров за " + datasets[i]['data'].length + " дней в статье " + articles[i] + ",");
+	      }
+              	
                 var data = {labels: labels, datasets: datasets};
                 var options = {bezierCurve: false, pointHitDetectionRadius: 1};
                 var context = $(config.chart).get(0).getContext('2d');
