@@ -340,7 +340,7 @@ daysago — количество дней, за которое нужно пок
         
         var yesterday = moment().subtract(1, 'days');
         
-        if(time1.diff(yesterday, 'days') > 1)
+        if((time1.diff(yesterday, 'days') > 1) || (time1.diff(yesterday, 'days') < -1))
         {
           shareLink = shareLink + "startdate=" + time2.format(config.timestampFormat) + "&enddate=" + time1.format(config.timestampFormat) + "&";
         }
