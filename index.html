@@ -402,7 +402,7 @@ daysago — количество дней, за которое нужно пок
               var values = data.items.map(function (elem) { return elem.views; });
               var color = config.colors[index];
               var firstWithArticle = data.items.filter(hasArticleName)[0];
-              var startIndex = data.items.length - Data.map(function(e) { return e.timestamp; }).indexOf(firstWithArticle.timestamp);
+              var startIndex = data.items.length - data.items.map(function(e) { return e.timestamp; }).indexOf(firstWithArticle.timestamp);
               datasets.push({
               	article: firstWithArticle.article,
                 fillColor: 'rgba(0,0,0,0)',
