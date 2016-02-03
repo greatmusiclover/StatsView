@@ -200,6 +200,16 @@ daysago — количество дней, за которое нужно пок
         if (defaults && defaults.endDate) {
           defaults.endDate = moment(defaults.endDate);
         }
+        
+        if (CheckIfURLParameterExists('startdate'))
+        {
+          defaults.startDate = moment(GetURLParameter('startdate'))
+        }
+        if (CheckIfURLParameterExists('enddate'))
+        {
+          defaults.endDate = moment(GetURLParameter('enddate'))
+        }
+        
 	defaults = $.extend({
 	  minDate: config.minDate,
           maxDate: config.maxDate,
@@ -328,9 +338,16 @@ daysago — количество дней, за которое нужно пок
         
         var timeDiff = time1.diff(time2, 'days') + 1;
         
-        if (timeDiff != defaultDaysAgo)
+        if(time1 != moment().subtract(1, 'days'))
         {
-          shareLink = shareLink + "daysago=" + timeDiff + "&"
+          if (timeDiff != defaultDaysAgo)
+          {
+            shareLink = shareLink + "daysago=" + timeDiff + "&"
+          }
+        }
+        else
+        {
+          shareLink = shareLink + "startdate=" + time2.format(config.timestampFormat) + "&enddate=" + time1.format(config.timestampFormat) + "&";
         }
         
         if(shareLink.substring(shareLink.length - 1) === "&")
