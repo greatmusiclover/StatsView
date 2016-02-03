@@ -409,6 +409,7 @@ daysago — количество дней, за которое нужно пок
               // When all article datasets have been collected,
               // initialize the chart.
               if (datasets.length == articles.length) {
+              	$("#totalviews").text("");
               	for (i = 0; i < datasets.length; i++) {
 		 var total = 0;
 		 $.each(datasets[i]['data'],function(key, value) {
