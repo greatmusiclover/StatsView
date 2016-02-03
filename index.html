@@ -340,14 +340,14 @@ daysago — количество дней, за которое нужно пок
         
         if(time1 != moment().subtract(1, 'days'))
         {
+          shareLink = shareLink + "startdate=" + time2.format(config.timestampFormat) + "&enddate=" + time1.format(config.timestampFormat) + "&";
+        }
+        else
+        {
           if (timeDiff != defaultDaysAgo)
           {
             shareLink = shareLink + "daysago=" + timeDiff + "&"
           }
-        }
-        else
-        {
-          shareLink = shareLink + "startdate=" + time2.format(config.timestampFormat) + "&enddate=" + time1.format(config.timestampFormat) + "&";
         }
         
         if(shareLink.substring(shareLink.length - 1) === "&")
