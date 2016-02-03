@@ -417,6 +417,9 @@ daysago — количество дней, за которое нужно пок
 		 });
 		 $("#totalviews").text($("#totalviews").text() + total + " просмотров за " + datasets[i]['data'].length + " дней в статье " + articles[i] + ", ");
 	        }
+	        
+	        //Remove last 2 characters: space and comma
+	        $("#totalviews").text($("#totalviews").text().substring(0, $("#totalviews").text().length - 2));
               	
                 var data = {labels: labels, datasets: datasets};
                 var options = {bezierCurve: false, pointHitDetectionRadius: 1};
