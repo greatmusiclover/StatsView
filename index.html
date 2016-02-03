@@ -321,7 +321,7 @@ daysago — количество дней, за которое нужно пок
           shareLink = shareLink + "pagename5=" + articles[4] + "&"
         }
         
-        var timeDiff = moment(endDate).diff(startDate, 'days');
+        var timeDiff = moment(endDate.format(config.timestampFormat)).diff(startDate.format(config.timestampFormat), 'days');
         
         if (timeDiff != config['daysAgo'])
         {
