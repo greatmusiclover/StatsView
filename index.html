@@ -421,13 +421,8 @@ daysago — количество дней, за которое нужно пок
               	$("#totalviews").text("");
               	for (i = 0; i < datasets.length; i++) {
 		 var total = 0;
-		 var nonNullViews = 0;
 		 $.each(datasets[i]['data'],function(key, value) {
 		   total += value;
-		   if(value != null)
-		   {
-		     nonNullViews++;
-		   }
 		 });
 		 $("#totalviews").text($("#totalviews").text() + total.toLocaleString() + " просмотров за " + datasets[i].startAt + " дней в статье " + datasets[i].article + ", ");
 		}
