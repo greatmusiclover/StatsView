@@ -321,7 +321,7 @@ daysago — количество дней, за которое нужно пок
           shareLink = shareLink + "pagename5=" + articles[4] + "&"
         }
         
-        $("share-link a").attr("href", shareLink).text(shareLink);
+        $("#share-link a").attr("href", shareLink).text(shareLink);
 
         // Asynchronously collect the data from Analytics Query Service API,
         // process it to Chart.js format and initialize the chart.
