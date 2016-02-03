@@ -82,6 +82,10 @@ daysago — количество дней, за которое нужно пок
 Пример: <a href="http://greatmusiclover.github.io/statsview/?pagename=Россия&daysago=365">http://greatmusiclover.github.io/statsview/?pagename=Россия&daysago=365</a>
         </pre>
       </div>
+      
+      <div id="share-link" class="col-lg-8 col-lg-offset-2" style="padding-right: 0px">
+      	Ссылка: <a href="http://greatmusiclover.github.io/statsview/">http://greatmusiclover.github.io/statsview/</a>
+      </div>
     </div>
 
     <script>
@@ -293,6 +297,31 @@ daysago — количество дней, за которое нужно пок
           config.articleComparisonChart.destroy();
           delete config.articleComparisonChart;
         }
+        
+        var shareLink = "http://greatmusiclover.github.io/statsview/?"
+        
+        if (articles[0] != null)
+        {
+          shareLink = shareLink + "pagename=" + articles[0] + "&";
+        }
+        if (articles[1] != null)
+        {
+          shareLink = shareLink + "pagename2=" + articles[1] + "&";
+        }
+        if (articles[2] != null)
+        {
+          shareLink = shareLink + "pagename3=" + articles[2] + "&"
+        }
+        if (articles[3] != null)
+        {
+          shareLink = shareLink + "pagename4=" + articles[3] + "&"
+        }
+        if (articles[4] != null)
+        {
+          shareLink = shareLink + "pagename5=" + articles[4] + "&"
+        }
+        
+        $("share-link a").attr("href", shareLink).text(shareLink);
 
         // Asynchronously collect the data from Analytics Query Service API,
         // process it to Chart.js format and initialize the chart.
