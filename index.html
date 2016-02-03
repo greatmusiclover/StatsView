@@ -324,7 +324,7 @@ daysago — количество дней, за которое нужно пок
         var time1 = moment(endDate);
         var time2 = moment(startDate);
         
-        var timeDiff = time1.diff(time2, 'days');
+        var timeDiff = time1.diff(time2, 'days') + 1;
         
         if (timeDiff != config['daysAgo'])
         {
