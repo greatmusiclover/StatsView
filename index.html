@@ -406,7 +406,7 @@ daysago — количество дней, за которое нужно пок
                 pointHighlightStroke: color,
                 data: values
               });
-
+		
               // When all article datasets have been collected,
               // initialize the chart.
               if (datasets.length == articles.length) {
@@ -415,17 +415,17 @@ daysago — количество дней, за которое нужно пок
 		 var total = 0;
 		 var nonNullViews = 0;
 		 $.each(datasets[i]['data'],function(key, value) {
-    		   total += value;
-    		   if(value != null)
-    		   {
-    		     nonNullViews++;
-    		   }
+		   total += value;
+		   if(value != null)
+		   {
+		     nonNullViews++;
+		   }
 		 });
-		 $("#totalviews").text($("#totalviews").text() + total.toLocaleString() + " просмотров за " + nonNullViews + " дней в статье " + articles[i] + ", ");
-	        }
-	        
-	        //Remove last 2 characters: space and comma
-	        $("#totalviews").text($("#totalviews").text().substring(0, $("#totalviews").text().length - 2));
+		 $("#totalviews").text($("#totalviews").text() + total.toLocaleString() + " просмотров за " + nonNullViews + " дней в статье " + datasets[i].article + ", ");
+		}
+		
+		//Remove last 2 characters: space and comma
+		$("#totalviews").text($("#totalviews").text().substring(0, $("#totalviews").text().length - 2));
               	
                 var data = {labels: labels, datasets: datasets};
                 var options = {bezierCurve: false, pointHitDetectionRadius: 1};
