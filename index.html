@@ -120,6 +120,8 @@ daysago — количество дней, за которое нужно пок
 	    }
 	};
     
+      var defaultDaysAgo = 20;
+    
       var config = {
         // For more information on the list of all Wikimedia languages and projects, see:
         // https://www.mediawiki.org/wiki/Extension:SiteMatrix
@@ -135,7 +137,7 @@ daysago — количество дней, за которое нужно пок
         timestampFormat: 'YYYYMMDD00',
         articles: [],
         project: 'ruwiki',
-        daysAgo: 20
+        daysAgo: defaultDaysAgo
       };
       
       if(CheckIfURLParameterExists('pagename'))
@@ -326,7 +328,7 @@ daysago — количество дней, за которое нужно пок
         
         var timeDiff = time1.diff(time2, 'days') + 1;
         
-        if (timeDiff != config['daysAgo'])
+        if (timeDiff != defaultDaysAgo)
         {
           shareLink = shareLink + "daysago=" + timeDiff + "&"
         }
