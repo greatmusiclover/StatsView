@@ -408,7 +408,7 @@ daysago — количество дней, за которое нужно пок
               // initialize the chart.
               if (datasets.length == articles.length) {
                 var data = {labels: labels, datasets: datasets};
-                var options = {bezierCurve: false};
+                var options = {bezierCurve: false, pointHitDetectionRadius: 1};
                 var context = $(config.chart).get(0).getContext('2d');
                 config.articleComparisonChart = new Chart(context).Line(data, options);
               }
