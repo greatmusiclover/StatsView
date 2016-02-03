@@ -401,15 +401,18 @@ daysago — количество дней, за которое нужно пок
               // Build the article's dataset.
               var values = data.items.map(function (elem) { return elem.views; });
               var color = config.colors[index];
+              var firstWithArticle = data.items.filter(hasArticleName)[0];
+              var startIndex = data.items.length - Data.map(function(e) { return e.timestamp; }).indexOf(firstWithArticle.timestamp);
               datasets.push({
-              	article: data.items.filter(hasArticleName)[0].article,
+              	article: firstWithArticle.article,
                 fillColor: 'rgba(0,0,0,0)',
                 strokeColor: color,
                 pointColor: color,
                 pointStrokeColor: '#fff',
                 pointHighlightFill: '#fff',
                 pointHighlightStroke: color,
-                data: values
+                data: values,
+                startAt: startIndex
               });
 		
               // When all article datasets have been collected,
