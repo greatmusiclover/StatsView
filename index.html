@@ -203,11 +203,11 @@ daysago — количество дней, за которое нужно пок
         
         if (CheckIfURLParameterExists('startdate'))
         {
-          defaults.startDate = moment(GetURLParameter('startdate'))
+          defaults.startDate = moment(GetURLParameter('startdate'), config['timestampFormat']);
         }
         if (CheckIfURLParameterExists('enddate'))
         {
-          defaults.endDate = moment(GetURLParameter('enddate'))
+          defaults.endDate = moment(GetURLParameter('enddate'), config['timestampFormat']);
         }
         
 	defaults = $.extend({
