@@ -321,6 +321,12 @@ daysago — количество дней, за которое нужно пок
           shareLink = shareLink + "pagename5=" + articles[4] + "&"
         }
         
+        if(shareLink.substring(shareLink.length - 1) === "&")
+        {
+          //Removing & at the end
+          shareLink = shareLink.substring(0, shareLink.length - 1);
+        }
+        
         $("#share-link a").attr("href", shareLink).text(shareLink);
 
         // Asynchronously collect the data from Analytics Query Service API,
