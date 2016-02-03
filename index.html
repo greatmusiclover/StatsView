@@ -420,7 +420,7 @@ daysago — количество дней, за которое нужно пок
     		     nonNullViews++;
     		   }
 		 });
-		 $("#totalviews").text($("#totalviews").text() + total + " просмотров за " + nonNullViews + " дней в статье " + articles[i] + ", ");
+		 $("#totalviews").text($("#totalviews").text() + total.toLocaleString() + " просмотров за " + nonNullViews + " дней в статье " + articles[i] + ", ");
 	        }
 	        
 	        //Remove last 2 characters: space and comma
