@@ -393,26 +393,16 @@ daysago — количество дней, за которое нужно пок
                 });
               }
               
-              function getArticleName()
+              function hasArticleName(item)
               {
-              	var i = 0;
-              	var articleName = null;
-              	
-              	while ((i < data.items.length) && (articleName === null))
-              	{
-              	  if(data.items[0].article != null)
-              	  {
-              	    articleName = data.items[0].article;
-              	  }
-              	  i++;
-              	}
+                 return item.article != null;
               }
 
               // Build the article's dataset.
               var values = data.items.map(function (elem) { return elem.views; });
               var color = config.colors[index];
               datasets.push({
-              	article: getArticleName(),
+              	article: data.items.filter(hasArticleName)[0],
                 fillColor: 'rgba(0,0,0,0)',
                 strokeColor: color,
                 pointColor: color,
